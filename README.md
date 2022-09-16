@@ -65,3 +65,18 @@ Information on configuring and using tools such as Xdebug, LiveReload, MFTF, and
 ### Destroying Environment
 
 To completely destroy the local environment we just created, run `warden env down -v` to tear down the project’s Docker containers, volumes, and (where applicable) cleanup the Mutagan sync session.
+
+```
+==> [00:36:22] Initialization complete
++ -------- + ------------------------------------------------------------------- + 
++ FrontURL + https://app.magepro1.test/                                          + 
++ -------- + ------------------------------------------------------------------- + 
++ AdminURL + https://app.magepro1.test/backend/                                  + 
++ -------- + ------------------------------------------------------------------- + 
++ AdminOTP + https://app.magepro1.test/media/localadmin-totp-qr.png?t=1661884582 + 
++ -------- + ------------------------------------------------------------------- + 
++ Username + localadmin                                                          + 
++ -------- + ------------------------------------------------------------------- + 
++ Password + ieCeiwee3eik5ooH                                                    + 
++ -------- + ------------------------------------------------------------------- + 
+```
