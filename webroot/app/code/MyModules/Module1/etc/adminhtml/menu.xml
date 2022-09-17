@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MyModules_Module1::menu" title="Custom Menu" module="MyModules_Module1" sortOrder="10" resource="MyModules_Module1::menu"/>
+        <add id="MyModules_Module1::create" title="Create" module="MyModules_Module1" sortOrder="10" parent="MyModules_Module1::menu" action="module1/create/" resource="MyModules_Module1::create"/>
+        <add id="MyModules_Module1::delete" title="Delete" module="MyModules_Module1" sortOrder="20" parent="MyModules_Module1::menu" action="module1/delete/" resource="MyModules_Module1::delete"/>
+        <add id="MyModules_Module1::view" title="View" module="MyModules_Module1" sortOrder="30" parent="MyModules_Module1::menu" action="custommenu/view/index" resource="MyModules_Module1::view"/>
+    </menu>
+</config>
