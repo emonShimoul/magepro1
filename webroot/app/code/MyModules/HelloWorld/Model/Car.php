@@ -2,7 +2,13 @@
 
 namespace MyModules\HelloWorld\Model;
 
-class Car
-{
+use Magento\Framework\Model\AbstractModel;
+use MyModules\HelloWorld\Model\ResourceModel\Car as ResourceModel;
 
+class Car extends AbstractModel
+{
+    protected function _construct()
+    {
+        $this->_init(ResourceModel::class);
+    }
 }
