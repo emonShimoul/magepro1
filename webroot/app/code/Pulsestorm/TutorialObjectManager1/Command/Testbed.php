@@ -13,6 +13,7 @@ class Testbed extends AbstractCommand
         $this->setDescription('A cli playground for testing commands');
         parent::configure();
     }
+
 /*
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -22,6 +23,8 @@ class Testbed extends AbstractCommand
         $output->writeln($message);
     }
 */
+
+/*
     protected function execute(InputInterface $input, OutputInterface $output){
         $manager = $this->getObjectManager();
         $object = $manager->create('Pulsestorm\TutorialObjectManager1\Model\Example');
@@ -32,5 +35,21 @@ class Testbed extends AbstractCommand
 
         $object = $manager->create('Pulsestorm\TutorialObjectManager1\Model\Example');
         $output->writeln($object->getHelloMessage());
+    }
+*/
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $manager = $this->getObjectManager();
+        $object  = $manager->get('Pulsestorm\TutorialObjectManager1\Model\Example');
+        $object->message = 'Hello PHP!';
+        $output->writeln(
+            $object->getHelloMessage()
+        );
+
+        $object  = $manager->get('Pulsestorm\TutorialObjectManager1\Model\Example');
+        $output->writeln(
+            $object->getHelloMessage()
+        );
     }
 }
