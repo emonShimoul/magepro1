@@ -328,6 +328,7 @@ return [
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Pulsestorm_TutorialObjectManager1' => 1,
+        'Pulsestorm_TutorialObjectManager2' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
