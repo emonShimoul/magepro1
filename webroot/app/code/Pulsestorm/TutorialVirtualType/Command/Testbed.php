@@ -49,6 +49,7 @@ class Testbed extends Command
 
         $this->output("Next, we're going to report on the Example object's one property (an Argument1 class)");
         $properties     = get_object_vars($example->property_of_example_object);
+        var_dump($properties);
         foreach($properties as $name=>$property)
         {
             $this->reportOnVariable($name, $property);
