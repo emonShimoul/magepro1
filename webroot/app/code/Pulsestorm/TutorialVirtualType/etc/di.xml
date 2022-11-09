@@ -8,8 +8,16 @@
     </type>
 
     <virtualType name="ourVirtualTypeName" type="Pulsestorm\TutorialVirtualType\Model\Argument1">
-
+        <arguments>
+            <argument name="the_argument" xsi:type="object">Pulsestorm\TutorialVirtualType\Model\Argument3</argument>
+        </arguments>
     </virtualType>
+
+    <type name="Pulsestorm\TutorialVirtualType\Model\Example">
+        <arguments>
+            <argument name="the_object" xsi:type="object">ourVirtualTypeName</argument>
+        </arguments>
+    </type>
     <!--
     <virtualType name="ourVirtualTypeName" type="Pulsestorm\TutorialVirtualType\Model\Argument1">
         <arguments>
