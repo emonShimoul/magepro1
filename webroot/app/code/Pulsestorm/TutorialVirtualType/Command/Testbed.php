@@ -10,14 +10,14 @@ use Pulsestorm\TutorialVirtualType\Traits\ObjectReport;
 class Testbed extends Command
 {
     use ObjectReport;
-    
+
     protected $om;
     public function __construct(ObjectManagerInterface $om)
     {
         $this->om = $om;
         return parent::__construct();
     }
-    
+
     protected function configure()
     {
         $this->setName("ps:tutorial-virtual-type");
@@ -28,8 +28,8 @@ class Testbed extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->output = $output;
-        $output->writeln("Installed Pulsestorm_TutorialVirtualType!");  
-        //$this->showNestedPropertiesForObject();
+//        $output->writeln("Installed Pulsestorm_TutorialVirtualType!");
+        $this->showNestedPropertiesForObject();
     }
 
     protected function getObjectManager()
@@ -38,28 +38,28 @@ class Testbed extends Command
     }
     protected function showNestedPropertiesForObject()
     {
-        $object_manager = $this->getObjectManager();        
+        $object_manager = $this->getObjectManager();
         $example         = $object_manager->create('Pulsestorm\TutorialVirtualType\Model\Example');
-        $this->output("First, we'll report on the Pulsestorm\TutorialVirtualType\Model\Example object");        
-        $properties     = get_object_vars($example);        
+        $this->output("First, we'll report on the Pulsestorm\TutorialVirtualType\Model\Example object");
+        $properties     = get_object_vars($example);
         foreach($properties as $name=>$property)
         {
-            $this->reportOnVariable($name, $property);       
-        }  
-        
-        $this->output("Next, we're going to report on the Example object's one property (an Argument1 class)");  
-        $properties     = get_object_vars($example->property_of_example_object);        
+            $this->reportOnVariable($name, $property);
+        }
+
+        $this->output("Next, we're going to report on the Example object's one property (an Argument1 class)");
+        $properties     = get_object_vars($example->property_of_example_object);
         foreach($properties as $name=>$property)
         {
-            $this->reportOnVariable($name, $property);       
-        }  
-        
-        $this->output("Finally, we'll report on an Argument1 object, instantiated seperate from Example");          
+            $this->reportOnVariable($name, $property);
+        }
+
+        $this->output("Finally, we'll report on an Argument1 object, instantiated seperate from Example");
         $argument1  = $object_manager->create('Pulsestorm\TutorialVirtualType\Model\Argument1');
-        $properties = get_object_vars($argument1);        
+        $properties = get_object_vars($argument1);
         foreach($properties as $name=>$property)
         {
-            $this->reportOnVariable($name, $property);       
-        }          
-    }                     
-} 
+            $this->reportOnVariable($name, $property);
+        }
+    }
+}
